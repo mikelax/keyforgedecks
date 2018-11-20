@@ -1,0 +1,9 @@
+{
+  "name": "keyforge-decks-stats",
+  "version": "0.1.0",
+  "description": "Stats Collector for Keyforge Decks",
+  "private": true,
+  "dependencies": {
+    "axios": "0.18.0"
+  }
+}

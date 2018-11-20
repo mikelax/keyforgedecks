@@ -1,0 +1,48 @@
+type KeyforgeDecksRegisteredCounts {
+  timestamp: Int!
+  date: String!
+  count: Int!
+}
+
+input KeyforgeDecksRegisteredCountsFilterInput {
+  date: String!
+}
+
+type Query {
+  getRegisteredDecksCount(
+    date: String!
+    timestamp: Int!
+  ): KeyforgeDecksRegisteredCounts
+  listRegisteredDecksCounts(
+    filter: KeyforgeDecksRegisteredCountsFilterInput
+  ): [KeyforgeDecksRegisteredCounts]
+}
+
+input TableIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input TableStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+schema {
+  query: Query
+}

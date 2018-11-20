@@ -1,0 +1,29 @@
+{
+  "name": "keyforge-decks",
+  "description": "Website displaying stats about registered Keyforge Decks",
+  "version": "0.1.0",
+  "author": "Michael Holtzman",
+  "dependencies": {
+    "date-fns": "^1.29.0",
+    "gatsby": "2.0.22",
+    "gatsby-plugin-react-helmet": "3.0.0",
+    "gatsby-source-graphql": "^2.0.6",
+    "lodash": "^4.17.11",
+    "react": "16.5.2",
+    "react-dom": "16.5.2",
+    "react-helmet": "5.2.0",
+    "recharts": "^1.4.1"
+  },
+  "keywords": [
+    "keyforge",
+    "ccg",
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {}
+}
