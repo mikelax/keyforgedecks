@@ -1,0 +1,16 @@
+body {
+  background-color: #1A1A1B;
+  color: #FDF5E9;
+  font-family: IBMPlexSans, Helvetica Neue, Helvetica, Arial;
+  text-align: center;
+}
+
+body a {
+  color: #4FBCFF;
+  text-decoration: none;
+}
+
+#footer {
+  margin-top: 120px;
+  font-size: 0.8em;
+}
