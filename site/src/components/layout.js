@@ -21,7 +21,7 @@ class Template extends React.Component {
 
     return <React.Fragment>
         <Helmet>
-          <title>Registered Keyforge Decks Statistics</title>
+          <title>Registered KeyForge Decks Statistics</title>
           <meta property="og:type" content="website" />
         </Helmet>
         <div className="body">

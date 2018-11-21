@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 import { graphql } from 'gatsby';
+import numbro from 'numbro';
 
 import DeckCountChart from 'components/DeckCountChart';
 import HeroCount from 'components/HeroCount';
@@ -10,20 +11,23 @@ class Index extends React.Component {
   render() {
     const { data: { keyforgedecks: { listRegisteredDecksCounts: counts } } } = this.props;
     _.sortBy(counts, 'timestamp');
+    // most recent data point count and timestamp
+    const latestCount = counts[counts.length - 1].count;
+    const latestTimestamp = counts[counts.length - 1].timestamp;
 
-    return (
-      <Layout>
+    return <Layout>
         <h1>KeyForge Registered Decks Counter!!</h1>
 
-        <HeroCount count={counts[counts.length - 1].count} timestamp={counts[counts.length - 1].timestamp} />
+        <HeroCount count={latestCount} timestamp={latestTimestamp} />
 
         <p>
-          +{counts[counts.length - 1].count - counts[0].count} decks in last {Math.floor((counts[counts.length - 1].timestamp - counts[0].timestamp) / 3600)} hours
+          {numbro(latestCount - counts[0].count).format({
+            thousandSeparated: true
+          })} new decks in last {Math.floor((latestTimestamp - counts[0].timestamp) / 3600)} hours
         </p>
 
         <DeckCountChart data={counts} />
-      </Layout>
-    );
+      </Layout>;
   }
 }
 

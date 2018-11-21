@@ -6,9 +6,10 @@ import { LineChart, Line, XAxis, ResponsiveContainer, Tooltip, YAxis } from 'rec
 import numbro from 'numbro';
 
 const DeckCountChart = ({ data }) => {
-  return <ResponsiveContainer width="100%" height={500}>
+  return (
+    <ResponsiveContainer width="100%" height={500}>
       <LineChart data={data} margin={{ left: 80, right: 80 }}>
-        <Line type="monotone" dot={false} dataKey="count" stroke="#661216" />
+      <Line type="monotone" dot={false} dataKey="count" stroke="#7F1219" />
         <XAxis dataKey="timestamp" height={90} tick={<XAxisTick />} />
         <YAxis
           domain={['dataMin - 10000', 'dataMax + 10000']}
@@ -19,7 +20,8 @@ const DeckCountChart = ({ data }) => {
           labelFormatter={(label) => null }
         />
       </LineChart>
-    </ResponsiveContainer>;
+    </ResponsiveContainer>
+  );
 }
 
 DeckCountChart.propTypes = {
@@ -31,7 +33,7 @@ const XAxisTick = ({ x, y, stroke, payload }) => {
   const offset = dateFns.distanceInWordsStrict(new Date(), payload.value * 1000, { addSuffix: true });
   return (
     <g transform={`translate(${x},${y})`}>
-      <text x={0} y={0} dy={16} fill="#FDF5E9" textAnchor="end" transform="rotate(-40)">
+      <text x={0} y={0} dy={16} fill="#666" textAnchor="end" transform="rotate(-40)">
         {offset}
       </text>
     </g>
