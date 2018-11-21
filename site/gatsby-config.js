@@ -8,6 +8,12 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-3946238-5'
+      }
+    },
+    {
       resolve: 'gatsby-source-graphql',
       options: {
         url:
