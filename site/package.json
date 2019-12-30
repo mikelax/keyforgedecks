@@ -4,17 +4,17 @@
   "version": "0.1.0",
   "author": "Michael Holtzman",
   "dependencies": {
-    "date-fns": "^1.29.0",
+    "date-fns": "2.8.1",
     "gatsby": "2.0.22",
     "gatsby-plugin-google-analytics": "^2.0.7",
     "gatsby-plugin-react-helmet": "3.0.0",
     "gatsby-source-graphql": "^2.0.6",
-    "lodash": "^4.17.11",
-    "numbro": "^2.1.1",
+    "lodash": "4.17.15",
+    "numbro": "2.1.1",
     "react": "16.5.2",
     "react-dom": "16.5.2",
-    "react-helmet": "5.2.0",
-    "recharts": "^1.4.1"
+    "react-helmet": "5.2.1",
+    "recharts": "1.8.5"
   },
   "keywords": [
     "keyforge",

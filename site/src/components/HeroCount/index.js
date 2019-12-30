@@ -1,4 +1,4 @@
-import dateFns from 'date-fns';
+import { format } from 'date-fns';
 import PropTypes from 'prop-types';
 import React from 'react';
 import numbro from 'numbro';
@@ -11,7 +11,7 @@ const CurrentCount = ({ count, timestamp }) => {
     <br />
     <span id="count">{numbro(count).format({ thousandSeparated: true })}</span>
     <br />
-    <span className="subheading">Last Refreshed: {dateFns.format(new Date(timestamp * 1000), 'MM/DD/YYYY h:ma Z')}</span>
+    <span className="subheading">Last Refreshed: {format(new Date(timestamp * 1000), 'MM/dd/yyyy h:ma OOO')}</span>
   </div>;
 }
 
