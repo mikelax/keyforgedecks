@@ -30,7 +30,7 @@ DeckCountChart.propTypes = {
 
 // private
 const XAxisTick = ({ x, y, stroke, payload }) => {
-  const offset = formatDistanceStrict(new Date(), payload.value * 1000, { addSuffix: true });
+  const offset = formatDistanceStrict(payload.value * 1000, new Date(), { addSuffix: true });
   return (
     <g transform={`translate(${x},${y})`}>
       <text x={0} y={0} dy={16} fill="#666" textAnchor="end" transform="rotate(-40)">
