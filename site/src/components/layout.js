@@ -37,7 +37,7 @@ class Template extends React.Component {
                   @mikelax
                 </a>
                 <br />
-                &copy; 2018, Michael Holtzman
+                &copy; 2019, Michael Holtzman
               </p>
             </footer>
           </div>

@@ -1,5 +1,5 @@
 // import numbro from 'numbro';
-import dateFns from 'date-fns';
+import { formatDistanceStrict } from 'date-fns';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { LineChart, Line, XAxis, ResponsiveContainer, Tooltip, YAxis } from 'recharts';
@@ -30,7 +30,7 @@ DeckCountChart.propTypes = {
 
 // private
 const XAxisTick = ({ x, y, stroke, payload }) => {
-  const offset = dateFns.distanceInWordsStrict(new Date(), payload.value * 1000, { addSuffix: true });
+  const offset = formatDistanceStrict(new Date(), payload.value * 1000, { addSuffix: true });
   return (
     <g transform={`translate(${x},${y})`}>
       <text x={0} y={0} dy={16} fill="#666" textAnchor="end" transform="rotate(-40)">

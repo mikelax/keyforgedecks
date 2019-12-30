@@ -34,7 +34,7 @@ class Index extends React.Component {
 export const query = graphql`
          query {
            keyforgedecks {
-             listRegisteredDecksCounts(filter: { date: "2018-11-20" }) {
+             listRegisteredDecksCounts(filter: { date: "2019-12-29" }) {
                timestamp
                count
              }
