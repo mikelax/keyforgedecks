@@ -1,11 +1,11 @@
-service: keyforge-decks # NOTE: update this with your service name
+service: keyforge-decks
 
 custom:
   registeredDeckCountsTable: 'keyforge-decks-${self:provider.stage}-registereddeckcounts'
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   stage: ${opt:stage, 'dev'}
   region: ${opt:region, 'us-east-1'}
   iamRoleStatements:

@@ -4,6 +4,6 @@
   "description": "Stats Collector for Keyforge Decks",
   "private": true,
   "dependencies": {
-    "axios": "0.18.0"
+    "axios": "0.19.0"
   }
 }
