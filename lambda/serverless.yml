@@ -5,33 +5,22 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs10.x
+  runtime: nodejs16.x
   stage: ${opt:stage, 'dev'}
   region: ${opt:region, 'us-east-1'}
-  iamRoleStatements:
-    - Effect: "Allow"
-      Action:
-        - dynamodb:Query
-        - dynamodb:Scan
-        - dynamodb:GetItem
-        - dynamodb:PutItem
-        - dynamodb:UpdateItem
-        - dynamodb:DeleteItem
-      Resource:
-        - { "Fn::GetAtt": ["RegisteredDeckCountsTable", "Arn" ] }
-
-# you can define service wide environment variables here
-#  environment:
-#    variable1: value1
-
-# you can add packaging information here
-#package:
-#  include:
-#    - include-me.js
-#    - include-me-dir/**
-#  exclude:
-#    - exclude-me.js
-#    - exclude-me-dir/**
+  iam:
+    role:
+      name: keyforge-decks
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource: !GetAtt RegisteredDeckCountsTable.Arn
 
 functions:
   deckCount:
@@ -65,7 +54,7 @@ resources:
           - AttributeName: timestamp
             KeyType: RANGE
 
-Outputs:
-  DeckCountsTableName:
-    Description: "Table Name for registered deck counts"
-    Value: !Ref RegisteredDeckCountsTable
+  Outputs:
+    DeckCountsTableName:
+      Description: "Table Name for registered deck counts"
+      Value: !Ref RegisteredDeckCountsTable

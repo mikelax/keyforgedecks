@@ -4,7 +4,6 @@ const AWS = require('aws-sdk'); // eslint-disable-line import/no-extraneous-depe
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
 module.exports.registeredCount = async (event, context) => {
-
   try {
     const decks = await axios.get('https://www.keyforgegame.com/api/decks', {
       params: {
